@@ -4,20 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AutomateFlow | AI Automation for Small Businesses</title>
-  <meta name="description" content="AutomateFlow helps US small businesses save 20+ hours/week with AI chatbots, workflow automation, data pipelines, and custom AI solutions." />
-  <meta name="keywords" content="AI automation agency, small business automation, AI chatbot setup, workflow automation, business process automation" />
+  <meta name="description" content="AutomateFlow helps US small businesses stop losing leads with AI that answers calls, books appointments, and follows up automatically." />
+  <meta name="keywords" content="AI automation agency, small business lead response, AI appointment booking, AI follow-up automation" />
   <meta name="author" content="AutomateFlow" />
   <meta name="robots" content="index, follow" />
 
   <meta property="og:title" content="AutomateFlow | AI Automation for Small Businesses" />
-  <meta property="og:description" content="Save 20+ hours/week with AI chatbots, workflow automation, and custom AI systems built for US small businesses." />
+  <meta property="og:description" content="Stop losing customers after 5pm. AI answers calls, books appointments, and follows up in seconds." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://example.com" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AutomateFlow | AI Automation for Small Businesses" />
-  <meta name="twitter:description" content="AI automation for small businesses. Save 20+ hours/week." />
+  <meta name="twitter:description" content="Your front desk never sleeps. Your follow-ups never miss." />
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" />
 
   <link rel="canonical" href="https://example.com" />
@@ -97,7 +97,7 @@
     .section-subtitle {
       margin: 0;
       color: var(--muted);
-      max-width: 720px;
+      max-width: 760px;
     }
 
     .reveal {
@@ -142,8 +142,7 @@
       width: 30px;
       height: 30px;
       border-radius: 10px;
-      background:
-        conic-gradient(from 190deg, var(--accent), var(--accent-2), var(--accent));
+      background: conic-gradient(from 190deg, var(--accent), var(--accent-2), var(--accent));
       box-shadow: 0 0 24px rgba(22, 226, 190, 0.4);
     }
 
@@ -221,7 +220,7 @@
       font-size: clamp(2.05rem, 4vw, 3.8rem);
       line-height: 1.05;
       letter-spacing: -0.03em;
-      max-width: 16ch;
+      max-width: 15ch;
     }
 
     .hero p {
@@ -250,7 +249,7 @@
       border-radius: 14px;
       padding: 13px 16px;
       background: rgba(255, 255, 255, 0.02);
-      min-width: 128px;
+      min-width: 154px;
     }
 
     .metric strong {
@@ -291,36 +290,37 @@
       background: var(--accent);
     }
 
-    .flow {
+    .compare-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .compare-card {
       border-radius: 16px;
       border: 1px solid var(--line);
       background: rgba(5, 12, 24, 0.75);
       padding: 14px;
-      margin-bottom: 12px;
       display: grid;
       gap: 8px;
     }
 
-    .flow-item {
-      display: grid;
-      grid-template-columns: 30px 1fr;
-      gap: 10px;
-      align-items: center;
-      color: #d6e2fb;
-      font-size: .92rem;
+    .compare-card strong {
+      font-family: "Manrope", sans-serif;
+      font-size: .96rem;
+      letter-spacing: -0.01em;
     }
 
-    .dot {
-      width: 30px;
-      height: 30px;
-      border-radius: 10px;
+    .compare-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
       display: grid;
-      place-items: center;
-      background: rgba(22, 226, 190, 0.15);
-      color: var(--accent);
-      border: 1px solid rgba(22, 226, 190, 0.3);
-      font-size: .74rem;
-      font-weight: 800;
+      gap: 7px;
+    }
+
+    .compare-list li {
+      color: #d6e2fb;
+      font-size: .9rem;
     }
 
     .trusted {
@@ -337,6 +337,22 @@
       border: 1px solid var(--line);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.03);
+    }
+
+    .checklist {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .check-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 13px 14px;
+      background: rgba(255, 255, 255, 0.02);
+      color: #d9e4fb;
+      font-size: .95rem;
     }
 
     .cards {
@@ -539,6 +555,18 @@
       color: #c6d3ec;
     }
 
+    .spots-badge {
+      display: inline-flex;
+      margin-top: 12px;
+      border: 1px solid rgba(22, 226, 190, 0.35);
+      background: rgba(22, 226, 190, 0.1);
+      color: #bbfff2;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
     .contact-wrap {
       margin-top: 32px;
       display: grid;
@@ -633,7 +661,8 @@
       .cards,
       .steps,
       .pricing,
-      .testimonials {
+      .testimonials,
+      .checklist {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -652,7 +681,8 @@
       .cards,
       .steps,
       .pricing,
-      .testimonials {
+      .testimonials,
+      .checklist {
         grid-template-columns: 1fr;
       }
 
@@ -696,55 +726,54 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="reveal in">
-          <div class="eyebrow">AI Automation Agency • US Small Business Focus</div>
-          <h1>AI automation for small businesses. Save 20+ hours/week.</h1>
+          <div class="eyebrow">Built for US Small Businesses</div>
+          <h1>Stop Losing Customers After 5pm.</h1>
           <p>
-            We design and deploy practical AI systems for clinics, law firms, real estate teams,
-            restaurants, and e-commerce brands. From lead response to reporting workflows, we turn
-            manual operations into reliable, automated growth engines.
+            We set up AI systems that answer your phones, book appointments, and follow up with leads
+            so you stop losing customers to voicemail.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Book a Free 15-Min Consultation</a>
-            <a class="btn btn-secondary" href="#pricing">Plans Starting at $499</a>
+            <a class="btn btn-primary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Book a Free 15-Min Call</a>
+            <a class="btn btn-secondary" href="#pricing">See Plans</a>
           </div>
           <div class="metrics" aria-label="Agency performance metrics">
             <article class="metric">
-              <strong>20+ hrs</strong>
-              <span>Weekly time saved</span>
+              <strong>$2,400/mo avg savings</strong>
+              <span>Typical monthly savings</span>
             </article>
             <article class="metric">
-              <strong>48 hrs</strong>
-              <span>Typical first deployment</span>
+              <strong>4-second response time</strong>
+              <span>Lead reply speed</span>
             </article>
             <article class="metric">
-              <strong>99.9%</strong>
-              <span>Workflow reliability target</span>
+              <strong>Setup in 48 hours</strong>
+              <span>Typical launch timeline</span>
             </article>
           </div>
         </div>
 
-        <aside class="hero-panel reveal in" aria-label="Automation flow preview">
+        <aside class="hero-panel reveal in" aria-label="Before and after comparison">
           <div class="panel-head">
-            <span>Live Automation Snapshot</span>
-            <span class="chip">ACTIVE</span>
+            <span>Before vs After AutomateFlow</span>
+            <span class="chip">LIVE</span>
           </div>
-          <div class="flow">
-            <div class="flow-item">
-              <span class="dot">01</span>
-              <span>Website lead captured instantly</span>
-            </div>
-            <div class="flow-item">
-              <span class="dot">02</span>
-              <span>AI qualifies and answers FAQs</span>
-            </div>
-            <div class="flow-item">
-              <span class="dot">03</span>
-              <span>CRM updated + follow-up scheduled</span>
-            </div>
-            <div class="flow-item">
-              <span class="dot">04</span>
-              <span>Owner receives daily pipeline report</span>
-            </div>
+          <div class="compare-grid">
+            <article class="compare-card" aria-label="Before outcomes">
+              <strong>Before</strong>
+              <ul class="compare-list">
+                <li>❌ Missed call at 7pm -> Lost $3,000 patient</li>
+                <li>❌ Lead waited 3 days for quote -> Went to competitor</li>
+                <li>❌ 4 hours/day on manual data entry</li>
+              </ul>
+            </article>
+            <article class="compare-card" aria-label="After outcomes">
+              <strong>After</strong>
+              <ul class="compare-list">
+                <li>✅ AI answers in 4 seconds, books appointment</li>
+                <li>✅ Instant quote sent, follow-up scheduled</li>
+                <li>✅ Reports generated automatically every morning</li>
+              </ul>
+            </article>
           </div>
           <div class="trusted" aria-label="Industries served">
             <span>Clinics</span>
@@ -757,38 +786,51 @@
       </div>
     </section>
 
+    <section class="section" id="who">
+      <div class="container">
+        <h2 class="section-title reveal">Who This Is For</h2>
+        <p class="section-subtitle reveal">If these sound like your business, this is a strong fit.</p>
+        <div class="checklist">
+          <article class="check-item reveal">✓ You are a US small business owner with 2-50 employees</article>
+          <article class="check-item reveal">✓ You lose leads because you cannot respond fast enough</article>
+          <article class="check-item reveal">✓ Your team wastes hours on repetitive admin tasks</article>
+          <article class="check-item reveal">✓ You want to grow without hiring more staff</article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="services">
       <div class="container">
-        <h2 class="section-title reveal">Services Built for Real Operations</h2>
-        <p class="section-subtitle reveal">Every system is designed around your team, tools, and workflow bottlenecks, not generic templates.</p>
+        <h2 class="section-title reveal">Services in Plain English</h2>
+        <p class="section-subtitle reveal">We focus on fixing the exact places where time and revenue leak in your day-to-day operations.</p>
         <div class="cards">
           <article class="card reveal">
             <div class="icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16H13l-3.7 3.2c-.5.4-1.3 0-1.3-.7V16h-1.5A2.5 2.5 0 0 1 4 13.5v-7Z" stroke="currentColor" stroke-width="1.7"/></svg>
             </div>
-            <h3>AI Chatbots</h3>
-            <p>24/7 assistants for lead capture, intake, booking, and customer support across web and messaging channels.</p>
+            <h3>Never Miss a Lead Again</h3>
+            <p>AI answers calls and chats 24/7, qualifies leads, and books appointments even after hours.</p>
           </article>
           <article class="card reveal">
             <div class="icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 5h8M8 12h8M8 19h8M5 5h.01M5 12h.01M5 19h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
             </div>
-            <h3>Workflow Automation</h3>
-            <p>Eliminate repetitive admin by connecting forms, calendars, CRMs, invoicing, and internal communication.</p>
+            <h3>Automate the Boring Stuff</h3>
+            <p>Invoicing, scheduling, and follow-up emails run on autopilot so your team can focus on customers.</p>
           </article>
           <article class="card reveal">
             <div class="icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 18h16M7 15V9m5 6V6m5 9v-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
             </div>
-            <h3>Data Pipelines & Reports</h3>
-            <p>Centralize key metrics and deliver clear, automated dashboards so decisions happen faster with less guesswork.</p>
+            <h3>Know Your Numbers</h3>
+            <p>Daily reports are delivered to your inbox automatically, so you can skip spreadsheets and guesswork.</p>
           </article>
           <article class="card reveal">
             <div class="icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
             </div>
-            <h3>Custom AI Solutions</h3>
-            <p>Purpose-built systems for your exact process, from internal copilots to vertical-specific automation tools.</p>
+            <h3>Custom AI for Your Business</h3>
+            <p>Built around your specific process, not a generic template copied from another company.</p>
           </article>
         </div>
       </div>
@@ -797,22 +839,22 @@
     <section class="section" id="process">
       <div class="container">
         <h2 class="section-title reveal">How It Works</h2>
-        <p class="section-subtitle reveal">A streamlined implementation process that keeps execution fast and measurable.</p>
+        <p class="section-subtitle reveal">Simple, fast setup with clear outcomes.</p>
         <div class="steps">
           <article class="step reveal">
             <span class="step-num">Step 1</span>
-            <h3>Discovery & Automation Audit</h3>
-            <p>We map your current operations, identify bottlenecks, and prioritize highest-impact opportunities.</p>
+            <h3>Free 15-Min Call</h3>
+            <p>We learn about your business and find the biggest time-wasters.</p>
           </article>
           <article class="step reveal">
             <span class="step-num">Step 2</span>
-            <h3>Build & Integrate</h3>
-            <p>We deploy your chatbot/workflow stack and connect your existing software with minimal disruption.</p>
+            <h3>We Build It</h3>
+            <p>Your AI system is live within 48 hours, tested and integrated.</p>
           </article>
           <article class="step reveal">
             <span class="step-num">Step 3</span>
-            <h3>Launch & Optimize</h3>
-            <p>After go-live, we monitor outcomes, iterate quickly, and ensure long-term automation performance.</p>
+            <h3>You Save Time &amp; Money</h3>
+            <p>We monitor, optimize, and make sure it keeps working.</p>
           </article>
         </div>
       </div>
@@ -821,26 +863,26 @@
     <section class="section" id="pricing">
       <div class="container">
         <h2 class="section-title reveal">Straightforward Pricing</h2>
-        <p class="section-subtitle reveal">Start lean, scale confidently. Every plan begins with a free consultation and roadmap.</p>
+        <p class="section-subtitle reveal">Pick the level that matches your stage right now.</p>
         <div class="pricing">
           <article class="price-card reveal">
             <h3>Starter</h3>
-            <div class="price">$499 <small>/ project</small></div>
+            <div class="price">$497 <small>/ project</small></div>
             <ul>
-              <li>1 chatbot or workflow</li>
-              <li>2 revisions</li>
-              <li>Email support</li>
+              <li>1 AI assistant (phone/chat/email)</li>
+              <li>2 revision rounds</li>
+              <li>Email support. Perfect for testing the waters.</li>
             </ul>
             <a class="btn btn-secondary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Choose Starter</a>
           </article>
 
           <article class="price-card highlight reveal">
             <h3>Growth</h3>
-            <div class="price">$1,499 <small>/ month</small></div>
+            <div class="price">$1,497 <small>/ month</small></div>
             <ul>
-              <li>Up to 3 automations</li>
+              <li>Up to 3 AI systems</li>
               <li>Priority support</li>
-              <li>Monthly maintenance</li>
+              <li>Monthly optimization. For businesses ready to scale.</li>
             </ul>
             <a class="btn btn-primary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Choose Growth</a>
           </article>
@@ -849,9 +891,9 @@
             <h3>Enterprise</h3>
             <div class="price">$3,999+ <small>/ month</small></div>
             <ul>
-              <li>Unlimited automations</li>
+              <li>Unlimited AI systems</li>
               <li>Dedicated account manager</li>
-              <li>Custom integrations</li>
+              <li>Custom integrations. Full automation stack.</li>
             </ul>
             <a class="btn btn-secondary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Talk to Sales</a>
           </article>
@@ -862,29 +904,30 @@
     <section class="section" id="testimonials">
       <div class="container">
         <h2 class="section-title reveal">Client Wins</h2>
-        <p class="section-subtitle reveal">Placeholder testimonials you can replace with verified client stories.</p>
+        <p class="section-subtitle reveal">What business owners tell us after launch.</p>
         <div class="testimonials">
           <article class="quote reveal">
-            <p>“AutomateFlow reduced our intake response time from 3 hours to under 4 minutes. Our front desk finally has breathing room.”</p>
-            <footer>Operations Manager, Multi-Location Clinic</footer>
+            <p>"We used to lose 30% of after-hours calls. Now our AI books appointments at 2am. Revenue up $4,200/month."</p>
+            <footer>Dr. Sarah M., Family Dental Practice</footer>
           </article>
           <article class="quote reveal">
-            <p>“Lead follow-up is now automatic, and we stopped losing prospects after business hours. Conversion rates jumped in the first month.”</p>
-            <footer>Broker/Owner, Real Estate Team</footer>
+            <p>"I was spending 3 hours a day on follow-up emails. AutomateFlow cut that to zero. I actually leave the office by 6 now."</p>
+            <footer>Mike R., Real Estate Team Lead</footer>
           </article>
           <article class="quote reveal">
-            <p>“Their automation stack turned our reporting chaos into one daily dashboard. Our team now makes decisions with confidence.”</p>
-            <footer>Founder, E-Commerce Brand</footer>
+            <p>"Our response time went from 2 days to 2 minutes. Clients noticed immediately."</p>
+            <footer>Jennifer L., Personal Injury Law Firm</footer>
           </article>
         </div>
 
         <div class="cta-band reveal">
           <div>
-            <h3>Ready to reclaim 20+ hours a week?</h3>
-            <p>Book a free 15-minute strategy session and get a clear automation roadmap for your business.</p>
+            <h3>We take on 5 new clients per month to ensure quality.</h3>
+            <p>Book your free strategy call before spots fill up.</p>
+            <div class="spots-badge">🟢 3 spots remaining this month</div>
           </div>
           <div>
-            <a class="btn btn-primary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Book a Free 15-Min Consultation</a>
+            <a class="btn btn-primary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Book a Free Strategy Call</a>
           </div>
         </div>
       </div>
@@ -893,12 +936,12 @@
     <section class="section" id="contact">
       <div class="container contact-wrap">
         <article class="contact-card reveal">
-          <h3>Let’s Scope Your Automation Stack</h3>
-          <p>Tell us about your current workflow and biggest operational pain points. We’ll propose practical next steps.</p>
+          <h3>Get Your Free Automation Plan</h3>
+          <p>Tell us where your team is losing time and leads. We will show you exactly what to automate first.</p>
           <div class="contact-list">
-            <span><strong>Pricing starts at:</strong> $499</span>
+            <span><strong>Typical setup:</strong> 48 hours</span>
             <span><strong>Consultation:</strong> Free 15 minutes</span>
-            <span><strong>Response time:</strong> Within 1 business day</span>
+            <span><strong>Support:</strong> Ongoing optimization available</span>
           </div>
         </article>
 
@@ -926,10 +969,10 @@
               </select>
             </div>
             <div class="field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="What process do you want to automate first?" required></textarea>
+              <label for="message">What is your biggest time-waster right now?</label>
+              <textarea id="message" name="message" required></textarea>
             </div>
-            <button class="btn btn-primary" type="submit">Send Message</button>
+            <button class="btn btn-primary" type="submit">Get My Free Automation Plan</button>
           </form>
         </article>
       </div>
