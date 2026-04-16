@@ -1,0 +1,962 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutomateFlow | AI Automation for Small Businesses</title>
+  <meta name="description" content="AutomateFlow helps US small businesses save 20+ hours/week with AI chatbots, workflow automation, data pipelines, and custom AI solutions." />
+  <meta name="keywords" content="AI automation agency, small business automation, AI chatbot setup, workflow automation, business process automation" />
+  <meta name="author" content="AutomateFlow" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="AutomateFlow | AI Automation for Small Businesses" />
+  <meta property="og:description" content="Save 20+ hours/week with AI chatbots, workflow automation, and custom AI systems built for US small businesses." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AutomateFlow | AI Automation for Small Businesses" />
+  <meta name="twitter:description" content="AI automation for small businesses. Save 20+ hours/week." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" />
+
+  <link rel="canonical" href="https://example.com" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0f1c'/%3E%3Cpath d='M22 62 L50 18 L78 62 Z' fill='%2314f1cf'/%3E%3Ccircle cx='50' cy='64' r='16' fill='%230a0f1c'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #05080f;
+      --bg-soft: #0b111f;
+      --panel: rgba(13, 20, 37, 0.75);
+      --panel-strong: #111b33;
+      --text: #e7ecf7;
+      --muted: #96a2ba;
+      --line: rgba(255, 255, 255, 0.09);
+      --accent: #16e2be;
+      --accent-2: #1b7eff;
+      --warning: #ffd166;
+      --radius: 18px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --container: min(1160px, 92vw);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 95% -10%, rgba(27, 126, 255, 0.18), transparent 60%),
+        radial-gradient(900px 600px at -10% 10%, rgba(22, 226, 190, 0.15), transparent 56%),
+        linear-gradient(180deg, #05080f 0%, #03060d 100%);
+      line-height: 1.55;
+      letter-spacing: 0.01em;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
+      opacity: 0.35;
+      z-index: -1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-title {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(1.7rem, 1.2vw + 1.3rem, 2.4rem);
+      line-height: 1.2;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      margin: 0;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(14px);
+      background: rgba(5, 8, 15, 0.74);
+      border-bottom: 1px solid var(--line);
+      z-index: 30;
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      background:
+        conic-gradient(from 190deg, var(--accent), var(--accent-2), var(--accent));
+      box-shadow: 0 0 24px rgba(22, 226, 190, 0.4);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 22px;
+      color: #b5c0d8;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover { color: #fff; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 700;
+      font-size: 0.94rem;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn-primary {
+      color: #051018;
+      background: linear-gradient(135deg, var(--accent), #4ef5d8);
+      box-shadow: 0 10px 24px rgba(22, 226, 190, 0.28);
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); }
+
+    .btn-secondary {
+      color: #d9e6ff;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--line);
+    }
+
+    .hero {
+      padding: 104px 0 78px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(22, 226, 190, 0.35);
+      color: #bbfff2;
+      background: rgba(22, 226, 190, 0.08);
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(2.05rem, 4vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      max-width: 16ch;
+    }
+
+    .hero p {
+      margin: 20px 0 0;
+      color: var(--muted);
+      max-width: 56ch;
+      font-size: 1.03rem;
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .metrics {
+      margin-top: 36px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 13px 16px;
+      background: rgba(255, 255, 255, 0.02);
+      min-width: 128px;
+    }
+
+    .metric strong {
+      font-size: 1.2rem;
+      font-family: "Manrope", sans-serif;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: .83rem;
+      margin-top: 3px;
+    }
+
+    .hero-panel {
+      border: 1px solid var(--line);
+      background: linear-gradient(170deg, rgba(27, 126, 255, 0.15), rgba(22, 226, 190, 0.04));
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      color: #c8d6f1;
+      font-weight: 600;
+    }
+
+    .chip {
+      font-size: .75rem;
+      color: #081318;
+      font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .flow {
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(5, 12, 24, 0.75);
+      padding: 14px;
+      margin-bottom: 12px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .flow-item {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 10px;
+      align-items: center;
+      color: #d6e2fb;
+      font-size: .92rem;
+    }
+
+    .dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: rgba(22, 226, 190, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(22, 226, 190, 0.3);
+      font-size: .74rem;
+      font-weight: 800;
+    }
+
+    .trusted {
+      color: var(--muted);
+      font-size: .86rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .trusted span {
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .cards {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: transform .22s ease, border-color .22s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(22, 226, 190, .45);
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      color: var(--accent);
+      background: rgba(22, 226, 190, 0.12);
+      border: 1px solid rgba(22, 226, 190, 0.25);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.02rem;
+      font-family: "Manrope", sans-serif;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .steps {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: linear-gradient(170deg, rgba(11, 17, 31, 0.95), rgba(11, 17, 31, 0.62));
+      position: relative;
+    }
+
+    .step-num {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: .75rem;
+      font-weight: 700;
+      color: #86f5e4;
+      border: 1px solid rgba(22, 226, 190, 0.3);
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(22, 226, 190, 0.08);
+    }
+
+    .step h3 {
+      margin: 8px 0;
+      font-size: 1.05rem;
+      font-family: "Manrope", sans-serif;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .pricing {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .price-card.highlight {
+      background: linear-gradient(180deg, rgba(22, 226, 190, 0.14), rgba(13, 20, 37, 0.92));
+      border-color: rgba(22, 226, 190, 0.52);
+      box-shadow: 0 10px 36px rgba(22, 226, 190, 0.16);
+      transform: translateY(-6px);
+    }
+
+    .price-card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-family: "Manrope", sans-serif;
+    }
+
+    .price {
+      margin: 12px 0 8px;
+      font-size: 2rem;
+      font-family: "Manrope", sans-serif;
+      letter-spacing: -0.03em;
+    }
+
+    .price small {
+      font-size: .95rem;
+      color: var(--muted);
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    .price-card ul {
+      margin: 14px 0 22px;
+      padding-left: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: #c9d4ea;
+      font-size: .92rem;
+    }
+
+    .price-card li::before {
+      content: "✓ ";
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .price-card .btn {
+      margin-top: auto;
+      width: 100%;
+    }
+
+    .testimonials {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .quote {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .quote p {
+      margin: 0;
+      color: #d6e2fb;
+      font-size: .95rem;
+    }
+
+    .quote footer {
+      margin-top: 14px;
+      font-size: .86rem;
+      color: var(--muted);
+    }
+
+    .cta-band {
+      margin-top: 24px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(27, 126, 255, 0.2), rgba(22, 226, 190, 0.12));
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cta-band h3 {
+      margin: 0;
+      font-size: clamp(1.45rem, 2.2vw, 2rem);
+      font-family: "Manrope", sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-band p {
+      margin: 9px 0 0;
+      color: #c6d3ec;
+    }
+
+    .contact-wrap {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 16px;
+    }
+
+    .contact-card, .form-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--panel);
+      padding: 24px;
+    }
+
+    .contact-card h3,
+    .form-card h3 {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.24rem;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin: 10px 0 0;
+    }
+
+    .contact-list {
+      margin-top: 22px;
+      display: grid;
+      gap: 12px;
+      color: #d6e2fb;
+      font-size: .95rem;
+    }
+
+    form {
+      margin-top: 16px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field label {
+      font-size: .82rem;
+      color: #b9c5dd;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 11px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 12px;
+      color: var(--text);
+      font: inherit;
+    }
+
+    textarea { min-height: 112px; resize: vertical; }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid rgba(22, 226, 190, 0.32);
+      border-color: rgba(22, 226, 190, 0.4);
+    }
+
+    footer.site-footer {
+      border-top: 1px solid var(--line);
+      margin-top: 70px;
+      padding: 26px 0;
+      color: #9fabc3;
+      font-size: .88rem;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1060px) {
+      .hero-grid,
+      .contact-wrap,
+      .cta-band {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .steps,
+      .pricing,
+      .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav ul { display: none; }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding-top: 78px;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .cards,
+      .steps,
+      .pricing,
+      .testimonials {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.highlight { transform: none; }
+
+      .nav { min-height: 66px; }
+
+      .btn { width: 100%; }
+
+      .hero-actions { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="AutomateFlow Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>AutomateFlow</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Book Consultation</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal in">
+          <div class="eyebrow">AI Automation Agency • US Small Business Focus</div>
+          <h1>AI automation for small businesses. Save 20+ hours/week.</h1>
+          <p>
+            We design and deploy practical AI systems for clinics, law firms, real estate teams,
+            restaurants, and e-commerce brands. From lead response to reporting workflows, we turn
+            manual operations into reliable, automated growth engines.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Book a Free 15-Min Consultation</a>
+            <a class="btn btn-secondary" href="#pricing">Plans Starting at $499</a>
+          </div>
+          <div class="metrics" aria-label="Agency performance metrics">
+            <article class="metric">
+              <strong>20+ hrs</strong>
+              <span>Weekly time saved</span>
+            </article>
+            <article class="metric">
+              <strong>48 hrs</strong>
+              <span>Typical first deployment</span>
+            </article>
+            <article class="metric">
+              <strong>99.9%</strong>
+              <span>Workflow reliability target</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal in" aria-label="Automation flow preview">
+          <div class="panel-head">
+            <span>Live Automation Snapshot</span>
+            <span class="chip">ACTIVE</span>
+          </div>
+          <div class="flow">
+            <div class="flow-item">
+              <span class="dot">01</span>
+              <span>Website lead captured instantly</span>
+            </div>
+            <div class="flow-item">
+              <span class="dot">02</span>
+              <span>AI qualifies and answers FAQs</span>
+            </div>
+            <div class="flow-item">
+              <span class="dot">03</span>
+              <span>CRM updated + follow-up scheduled</span>
+            </div>
+            <div class="flow-item">
+              <span class="dot">04</span>
+              <span>Owner receives daily pipeline report</span>
+            </div>
+          </div>
+          <div class="trusted" aria-label="Industries served">
+            <span>Clinics</span>
+            <span>Law Firms</span>
+            <span>Real Estate</span>
+            <span>Restaurants</span>
+            <span>E-Commerce</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section-title reveal">Services Built for Real Operations</h2>
+        <p class="section-subtitle reveal">Every system is designed around your team, tools, and workflow bottlenecks, not generic templates.</p>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16H13l-3.7 3.2c-.5.4-1.3 0-1.3-.7V16h-1.5A2.5 2.5 0 0 1 4 13.5v-7Z" stroke="currentColor" stroke-width="1.7"/></svg>
+            </div>
+            <h3>AI Chatbots</h3>
+            <p>24/7 assistants for lead capture, intake, booking, and customer support across web and messaging channels.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 5h8M8 12h8M8 19h8M5 5h.01M5 12h.01M5 19h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Workflow Automation</h3>
+            <p>Eliminate repetitive admin by connecting forms, calendars, CRMs, invoicing, and internal communication.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 18h16M7 15V9m5 6V6m5 9v-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Data Pipelines & Reports</h3>
+            <p>Centralize key metrics and deliver clear, automated dashboards so decisions happen faster with less guesswork.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Custom AI Solutions</h3>
+            <p>Purpose-built systems for your exact process, from internal copilots to vertical-specific automation tools.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <h2 class="section-title reveal">How It Works</h2>
+        <p class="section-subtitle reveal">A streamlined implementation process that keeps execution fast and measurable.</p>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-num">Step 1</span>
+            <h3>Discovery & Automation Audit</h3>
+            <p>We map your current operations, identify bottlenecks, and prioritize highest-impact opportunities.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">Step 2</span>
+            <h3>Build & Integrate</h3>
+            <p>We deploy your chatbot/workflow stack and connect your existing software with minimal disruption.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">Step 3</span>
+            <h3>Launch & Optimize</h3>
+            <p>After go-live, we monitor outcomes, iterate quickly, and ensure long-term automation performance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <h2 class="section-title reveal">Straightforward Pricing</h2>
+        <p class="section-subtitle reveal">Start lean, scale confidently. Every plan begins with a free consultation and roadmap.</p>
+        <div class="pricing">
+          <article class="price-card reveal">
+            <h3>Starter</h3>
+            <div class="price">$499 <small>/ project</small></div>
+            <ul>
+              <li>1 chatbot or workflow</li>
+              <li>2 revisions</li>
+              <li>Email support</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Choose Starter</a>
+          </article>
+
+          <article class="price-card highlight reveal">
+            <h3>Growth</h3>
+            <div class="price">$1,499 <small>/ month</small></div>
+            <ul>
+              <li>Up to 3 automations</li>
+              <li>Priority support</li>
+              <li>Monthly maintenance</li>
+            </ul>
+            <a class="btn btn-primary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Choose Growth</a>
+          </article>
+
+          <article class="price-card reveal">
+            <h3>Enterprise</h3>
+            <div class="price">$3,999+ <small>/ month</small></div>
+            <ul>
+              <li>Unlimited automations</li>
+              <li>Dedicated account manager</li>
+              <li>Custom integrations</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Talk to Sales</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <h2 class="section-title reveal">Client Wins</h2>
+        <p class="section-subtitle reveal">Placeholder testimonials you can replace with verified client stories.</p>
+        <div class="testimonials">
+          <article class="quote reveal">
+            <p>“AutomateFlow reduced our intake response time from 3 hours to under 4 minutes. Our front desk finally has breathing room.”</p>
+            <footer>Operations Manager, Multi-Location Clinic</footer>
+          </article>
+          <article class="quote reveal">
+            <p>“Lead follow-up is now automatic, and we stopped losing prospects after business hours. Conversion rates jumped in the first month.”</p>
+            <footer>Broker/Owner, Real Estate Team</footer>
+          </article>
+          <article class="quote reveal">
+            <p>“Their automation stack turned our reporting chaos into one daily dashboard. Our team now makes decisions with confidence.”</p>
+            <footer>Founder, E-Commerce Brand</footer>
+          </article>
+        </div>
+
+        <div class="cta-band reveal">
+          <div>
+            <h3>Ready to reclaim 20+ hours a week?</h3>
+            <p>Book a free 15-minute strategy session and get a clear automation roadmap for your business.</p>
+          </div>
+          <div>
+            <a class="btn btn-primary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Book a Free 15-Min Consultation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-wrap">
+        <article class="contact-card reveal">
+          <h3>Let’s Scope Your Automation Stack</h3>
+          <p>Tell us about your current workflow and biggest operational pain points. We’ll propose practical next steps.</p>
+          <div class="contact-list">
+            <span><strong>Pricing starts at:</strong> $499</span>
+            <span><strong>Consultation:</strong> Free 15 minutes</span>
+            <span><strong>Response time:</strong> Within 1 business day</span>
+          </div>
+        </article>
+
+        <article class="form-card reveal">
+          <h3>Contact Form</h3>
+          <form aria-label="Contact form" onsubmit="event.preventDefault(); alert('Thanks! We will get back to you within 1 business day.'); this.reset();">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="business">Business Type</label>
+              <select id="business" name="business" required>
+                <option value="" selected disabled>Select your business type</option>
+                <option>Clinic</option>
+                <option>Law Firm</option>
+                <option>Real Estate</option>
+                <option>Restaurant</option>
+                <option>E-Commerce</option>
+                <option>Other Small Business</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="What process do you want to automate first?" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> AutomateFlow. All rights reserved.</span>
+      <span>AI automation for US small businesses.</span>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal:not(.in)').forEach((el) => observer.observe(el));
+
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
