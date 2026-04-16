@@ -21,7 +21,7 @@
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" />
 
   <link rel="canonical" href="https://example.com" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0f1c'/%3E%3Cpath d='M22 62 L50 18 L78 62 Z' fill='%2314f1cf'/%3E%3Ccircle cx='50' cy='64' r='16' fill='%230a0f1c'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23eff6ff'/%3E%3Cpath d='M22 62 L50 18 L78 62 Z' fill='%232563eb'/%3E%3Ccircle cx='50' cy='64' r='16' fill='%2310b981'/%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,18 +29,19 @@
 
   <style>
     :root {
-      --bg: #05080f;
-      --bg-soft: #0b111f;
-      --panel: rgba(13, 20, 37, 0.75);
-      --panel-strong: #111b33;
-      --text: #e7ecf7;
-      --muted: #96a2ba;
-      --line: rgba(255, 255, 255, 0.09);
-      --accent: #16e2be;
-      --accent-2: #1b7eff;
-      --warning: #ffd166;
+      --bg: #ffffff;
+      --bg-soft: #f7f9fc;
+      --panel: rgba(255, 255, 255, 0.95);
+      --panel-strong: #f0f4f8;
+      --text: #1a2b3c;
+      --muted: #5a6b7c;
+      --line: rgba(0, 0, 0, 0.08);
+      --accent: #2563eb;
+      --accent-2: #10b981;
+      --accent-light: #eff6ff;
+      --warning: #f59e0b;
       --radius: 18px;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
       --container: min(1160px, 92vw);
     }
 
@@ -55,9 +56,9 @@
       font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(1200px 700px at 95% -10%, rgba(27, 126, 255, 0.18), transparent 60%),
-        radial-gradient(900px 600px at -10% 10%, rgba(22, 226, 190, 0.15), transparent 56%),
-        linear-gradient(180deg, #05080f 0%, #03060d 100%);
+        radial-gradient(1200px 700px at 95% -10%, rgba(37, 99, 235, 0.1), transparent 60%),
+        radial-gradient(900px 600px at -10% 10%, rgba(16, 185, 129, 0.08), transparent 56%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
       line-height: 1.55;
       letter-spacing: 0.01em;
       overflow-x: hidden;
@@ -68,10 +69,10 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
       background-size: 40px 40px;
       mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
-      opacity: 0.35;
+      opacity: 0.15;
       z-index: -1;
     }
 
@@ -114,8 +115,7 @@
     header {
       position: sticky;
       top: 0;
-      backdrop-filter: blur(14px);
-      background: rgba(5, 8, 15, 0.74);
+      background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid var(--line);
       z-index: 30;
     }
@@ -142,8 +142,7 @@
       width: 30px;
       height: 30px;
       border-radius: 10px;
-      background: conic-gradient(from 190deg, var(--accent), var(--accent-2), var(--accent));
-      box-shadow: 0 0 24px rgba(22, 226, 190, 0.4);
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
     }
 
     nav ul {
@@ -152,11 +151,11 @@
       margin: 0;
       padding: 0;
       gap: 22px;
-      color: #b5c0d8;
+      color: var(--muted);
       font-size: 0.95rem;
     }
 
-    nav a:hover { color: #fff; }
+    nav a:hover { color: var(--accent); }
 
     .btn {
       display: inline-flex;
@@ -173,17 +172,17 @@
     }
 
     .btn-primary {
-      color: #051018;
-      background: linear-gradient(135deg, var(--accent), #4ef5d8);
-      box-shadow: 0 10px 24px rgba(22, 226, 190, 0.28);
+      color: #ffffff;
+      background: var(--accent);
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.22);
     }
 
     .btn-primary:hover { transform: translateY(-2px); }
 
     .btn-secondary {
-      color: #d9e6ff;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--line);
+      color: var(--accent);
+      background: #ffffff;
+      border: 1px solid var(--accent);
     }
 
     .hero {
@@ -202,9 +201,9 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      border: 1px solid rgba(22, 226, 190, 0.35);
-      color: #bbfff2;
-      background: rgba(22, 226, 190, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.25);
+      color: var(--accent);
+      background: var(--accent-light);
       padding: 6px 11px;
       border-radius: 999px;
       font-size: .78rem;
@@ -248,8 +247,9 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 13px 16px;
-      background: rgba(255, 255, 255, 0.02);
+      background: #ffffff;
       min-width: 154px;
+      box-shadow: var(--shadow);
     }
 
     .metric strong {
@@ -266,7 +266,7 @@
 
     .hero-panel {
       border: 1px solid var(--line);
-      background: linear-gradient(170deg, rgba(27, 126, 255, 0.15), rgba(22, 226, 190, 0.04));
+      background: linear-gradient(170deg, var(--accent-light), #ffffff);
       border-radius: 22px;
       padding: 22px;
       box-shadow: var(--shadow);
@@ -277,13 +277,13 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 16px;
-      color: #c8d6f1;
+      color: var(--muted);
       font-weight: 600;
     }
 
     .chip {
       font-size: .75rem;
-      color: #081318;
+      color: #ffffff;
       font-weight: 800;
       padding: 4px 8px;
       border-radius: 999px;
@@ -298,10 +298,11 @@
     .compare-card {
       border-radius: 16px;
       border: 1px solid var(--line);
-      background: rgba(5, 12, 24, 0.75);
+      background: #ffffff;
       padding: 14px;
       display: grid;
       gap: 8px;
+      box-shadow: var(--shadow);
     }
 
     .compare-card strong {
@@ -319,7 +320,7 @@
     }
 
     .compare-list li {
-      color: #d6e2fb;
+      color: var(--text);
       font-size: .9rem;
     }
 
@@ -336,7 +337,7 @@
       padding: 5px 10px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.03);
+      background: #ffffff;
     }
 
     .checklist {
@@ -350,9 +351,10 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 13px 14px;
-      background: rgba(255, 255, 255, 0.02);
-      color: #d9e4fb;
+      background: #ffffff;
+      color: var(--text);
       font-size: .95rem;
+      box-shadow: var(--shadow);
     }
 
     .cards {
@@ -367,12 +369,14 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 20px;
-      transition: transform .22s ease, border-color .22s ease;
+      transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+      box-shadow: var(--shadow);
     }
 
     .card:hover {
       transform: translateY(-5px);
-      border-color: rgba(22, 226, 190, .45);
+      border-color: rgba(37, 99, 235, .35);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
     }
 
     .icon {
@@ -383,8 +387,8 @@
       place-items: center;
       margin-bottom: 14px;
       color: var(--accent);
-      background: rgba(22, 226, 190, 0.12);
-      border: 1px solid rgba(22, 226, 190, 0.25);
+      background: var(--accent-light);
+      border: 1px solid rgba(37, 99, 235, 0.2);
     }
 
     .card h3 {
@@ -411,8 +415,16 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 22px;
-      background: linear-gradient(170deg, rgba(11, 17, 31, 0.95), rgba(11, 17, 31, 0.62));
+      background: #ffffff;
       position: relative;
+      box-shadow: var(--shadow);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-4px);
+      border-color: rgba(37, 99, 235, .28);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
     }
 
     .step-num {
@@ -421,11 +433,17 @@
       right: 14px;
       font-size: .75rem;
       font-weight: 700;
-      color: #86f5e4;
-      border: 1px solid rgba(22, 226, 190, 0.3);
+      color: var(--accent);
+      border: 1px solid rgba(37, 99, 235, 0.25);
       padding: 3px 8px;
       border-radius: 999px;
-      background: rgba(22, 226, 190, 0.08);
+      background: var(--accent-light);
+    }
+
+    .dot {
+      color: var(--accent);
+      border: 1px solid rgba(37, 99, 235, 0.25);
+      background: var(--accent-light);
     }
 
     .step h3 {
@@ -456,13 +474,42 @@
       display: flex;
       flex-direction: column;
       min-height: 100%;
+      box-shadow: var(--shadow);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
     }
 
     .price-card.highlight {
-      background: linear-gradient(180deg, rgba(22, 226, 190, 0.14), rgba(13, 20, 37, 0.92));
-      border-color: rgba(22, 226, 190, 0.52);
-      box-shadow: 0 10px 36px rgba(22, 226, 190, 0.16);
+      background: var(--accent-light);
+      border-color: rgba(37, 99, 235, 0.45);
+      box-shadow: 0 10px 28px rgba(37, 99, 235, 0.14);
       transform: translateY(-6px);
+    }
+
+    .price-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(37, 99, 235, .28);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    }
+
+    .price-badge {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      margin-bottom: 10px;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .price-subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
     }
 
     .price-card h3 {
@@ -484,13 +531,19 @@
       font-family: "Plus Jakarta Sans", sans-serif;
     }
 
+    .setup-fee {
+      margin: 0;
+      font-size: .88rem;
+      color: var(--muted);
+    }
+
     .price-card ul {
       margin: 14px 0 22px;
       padding-left: 0;
       list-style: none;
       display: grid;
       gap: 10px;
-      color: #c9d4ea;
+      color: var(--text);
       font-size: .92rem;
     }
 
@@ -505,6 +558,13 @@
       width: 100%;
     }
 
+    .commitment {
+      margin: 10px 0 0;
+      font-size: .82rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
     .testimonials {
       margin-top: 34px;
       display: grid;
@@ -516,12 +576,20 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 20px;
-      background: rgba(255,255,255,0.02);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .quote:hover {
+      transform: translateY(-4px);
+      border-color: rgba(37, 99, 235, .28);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
     }
 
     .quote p {
       margin: 0;
-      color: #d6e2fb;
+      color: var(--text);
       font-size: .95rem;
     }
 
@@ -535,12 +603,13 @@
       margin-top: 24px;
       border-radius: 24px;
       border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(27, 126, 255, 0.2), rgba(22, 226, 190, 0.12));
+      background: linear-gradient(145deg, var(--accent-light), #ffffff);
       padding: 30px;
       display: grid;
       grid-template-columns: 1.25fr .75fr;
       align-items: center;
       gap: 20px;
+      box-shadow: var(--shadow);
     }
 
     .cta-band h3 {
@@ -552,15 +621,15 @@
 
     .cta-band p {
       margin: 9px 0 0;
-      color: #c6d3ec;
+      color: var(--muted);
     }
 
     .spots-badge {
       display: inline-flex;
       margin-top: 12px;
-      border: 1px solid rgba(22, 226, 190, 0.35);
-      background: rgba(22, 226, 190, 0.1);
-      color: #bbfff2;
+      border: 1px solid rgba(37, 99, 235, 0.25);
+      background: var(--accent-light);
+      color: var(--accent);
       padding: 6px 10px;
       border-radius: 999px;
       font-size: .8rem;
@@ -579,6 +648,7 @@
       border-radius: 20px;
       background: var(--panel);
       padding: 24px;
+      box-shadow: var(--shadow);
     }
 
     .contact-card h3,
@@ -597,7 +667,7 @@
       margin-top: 22px;
       display: grid;
       gap: 12px;
-      color: #d6e2fb;
+      color: var(--text);
       font-size: .95rem;
     }
 
@@ -614,15 +684,15 @@
 
     .field label {
       font-size: .82rem;
-      color: #b9c5dd;
+      color: var(--muted);
       font-weight: 600;
     }
 
     input, select, textarea {
       width: 100%;
-      border: 1px solid rgba(255,255,255,0.12);
+      border: 1px solid var(--line);
       border-radius: 11px;
-      background: rgba(255, 255, 255, 0.03);
+      background: #ffffff;
       padding: 12px;
       color: var(--text);
       font: inherit;
@@ -631,15 +701,16 @@
     textarea { min-height: 112px; resize: vertical; }
 
     input:focus, select:focus, textarea:focus {
-      outline: 2px solid rgba(22, 226, 190, 0.32);
-      border-color: rgba(22, 226, 190, 0.4);
+      outline: 2px solid rgba(37, 99, 235, 0.24);
+      border-color: rgba(37, 99, 235, 0.45);
     }
 
     footer.site-footer {
       border-top: 1px solid var(--line);
       margin-top: 70px;
       padding: 26px 0;
-      color: #9fabc3;
+      background: var(--bg-soft);
+      color: var(--text);
       font-size: .88rem;
     }
 
@@ -866,36 +937,52 @@
         <p class="section-subtitle reveal">Pick the level that matches your stage right now.</p>
         <div class="pricing">
           <article class="price-card reveal">
-            <h3>Starter</h3>
-            <div class="price">$497 <small>/ project</small></div>
+            <h3>Starter - AI Front Desk</h3>
+            <p class="price-subtitle">Perfect for testing the waters</p>
+            <div class="price">$497 <small>/mo</small></div>
+            <p class="setup-fee">+ $1,500 one-time setup</p>
             <ul>
-              <li>1 AI assistant (phone/chat/email)</li>
-              <li>2 revision rounds</li>
-              <li>Email support. Perfect for testing the waters.</li>
+              <li>1 AI assistant (chat, email, or phone)</li>
+              <li>24/7 automated responses</li>
+              <li>CRM integration</li>
+              <li>Monthly performance report</li>
+              <li>Email support</li>
             </ul>
-            <a class="btn btn-secondary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Choose Starter</a>
+            <a class="btn btn-secondary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Start with AI Front Desk</a>
+            <p class="commitment">Minimum 3-month commitment</p>
           </article>
 
           <article class="price-card highlight reveal">
-            <h3>Growth</h3>
-            <div class="price">$1,497 <small>/ month</small></div>
+            <span class="price-badge">Most Popular</span>
+            <h3>Growth - AI Operations</h3>
+            <p class="price-subtitle">For businesses ready to scale</p>
+            <div class="price">$997 <small>/mo</small></div>
+            <p class="setup-fee">+ $3,000 one-time setup</p>
             <ul>
               <li>Up to 3 AI systems</li>
-              <li>Priority support</li>
-              <li>Monthly optimization. For businesses ready to scale.</li>
+              <li>Priority support (24hr response)</li>
+              <li>Monthly optimization &amp; A/B testing</li>
+              <li>Quarterly strategy session</li>
+              <li>Dedicated Slack channel</li>
             </ul>
-            <a class="btn btn-primary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Choose Growth</a>
+            <a class="btn btn-primary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Scale with AI Operations</a>
+            <p class="commitment">Minimum 6-month commitment</p>
           </article>
 
           <article class="price-card reveal">
-            <h3>Enterprise</h3>
-            <div class="price">$3,999+ <small>/ month</small></div>
+            <h3>Scale - Full AI Stack</h3>
+            <p class="price-subtitle">Enterprise-grade automation</p>
+            <div class="price">$1,997+ <small>/mo</small></div>
+            <p class="setup-fee">+ $6,000 one-time setup</p>
             <ul>
               <li>Unlimited AI systems</li>
               <li>Dedicated account manager</li>
-              <li>Custom integrations. Full automation stack.</li>
+              <li>Custom integrations</li>
+              <li>4-hour support response</li>
+              <li>Weekly optimization reports</li>
             </ul>
-            <a class="btn btn-secondary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Talk to Sales</a>
+            <a class="btn btn-secondary" href="https://calendly.com/your-link" target="_blank" rel="noopener">Talk to Us</a>
+            <p class="commitment">Minimum 12-month commitment</p>
           </article>
         </div>
       </div>
