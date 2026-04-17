@@ -1,0 +1,26 @@
+Subject: Quick question about after-hours calls at {business_name}
+
+Hi {first_name},
+
+I was looking at {business_name}'s website and noticed you might be dealing with {specific_issue}.
+
+Most dental practices in {city} lose 20-30% of new patient calls because they come in after hours or during lunch. That's roughly $3,000-5,000/month in lost revenue.
+
+We built an AI system that:
+- Answers calls and chats 24/7 in your practice's voice
+- Books appointments directly into your scheduling system
+- Follows up with patients who didn't book
+- Sends you a daily summary of every lead
+
+It takes 48 hours to set up. You don't need to change anything about how your office runs.
+
+Would a quick 15-minute call this week make sense? I can show you exactly how it would work for {business_name}.
+
+Here's my calendar: https://calendly.com/ikow233/15min
+
+Best,
+Jimmy Wang
+FindPicked | AI Automation for Small Businesses
+https://biz.findpicked.com
+
+P.S. We're offering free setup ($1,500 value) for our first 3 dental clients in Houston.

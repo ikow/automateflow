@@ -778,6 +778,273 @@
       * { transition: none !important; animation: none !important; }
       .reveal { opacity: 1 !important; transform: none !important; }
     }
+
+    .demo-chat-widget {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .demo-chat-badge {
+      background: #ffffff;
+      color: var(--accent);
+      border: 1px solid rgba(37, 99, 235, 0.25);
+      box-shadow: var(--shadow);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .demo-chat-toggle {
+      width: 62px;
+      height: 62px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.35);
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .demo-chat-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(37, 99, 235, 0.4);
+    }
+
+    .demo-chat-panel {
+      width: min(350px, calc(100vw - 28px));
+      height: 500px;
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, 0.1);
+      border-radius: 18px;
+      box-shadow: 0 22px 56px rgba(15, 23, 42, 0.2);
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      opacity: 0;
+      transform: translateY(16px) scale(0.98);
+      transform-origin: bottom right;
+      pointer-events: none;
+      transition: opacity .25s ease, transform .25s ease;
+    }
+
+    .demo-chat-panel.open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .demo-chat-header {
+      background: #ffffff;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      padding: 14px 14px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .demo-chat-title {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .demo-chat-close {
+      width: 32px;
+      height: 32px;
+      border: 0;
+      background: transparent;
+      border-radius: 8px;
+      color: #5a6b7c;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .demo-chat-close:hover {
+      background: rgba(15, 23, 42, 0.05);
+      color: #0f172a;
+    }
+
+    .demo-chat-messages {
+      padding: 14px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+
+    .demo-chat-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 92%;
+    }
+
+    .demo-chat-row.bot { align-self: flex-start; }
+    .demo-chat-row.user { align-self: flex-end; }
+
+    .demo-chat-bubble {
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      word-break: break-word;
+    }
+
+    .demo-chat-row.bot .demo-chat-bubble {
+      background: #eef2f7;
+      color: #1f2937;
+      border-bottom-left-radius: 6px;
+    }
+
+    .demo-chat-row.user .demo-chat-bubble {
+      background: var(--accent);
+      color: #ffffff;
+      border-bottom-right-radius: 6px;
+    }
+
+    .demo-chat-choices {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .demo-chat-choice {
+      border: 1px solid rgba(37, 99, 235, 0.28);
+      color: var(--accent);
+      background: #ffffff;
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, border-color .18s ease;
+    }
+
+    .demo-chat-choice:hover {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .demo-chat-typing {
+      align-self: flex-start;
+      background: #eef2f7;
+      border-radius: 14px;
+      border-bottom-left-radius: 6px;
+      padding: 9px 11px;
+      display: inline-flex;
+      gap: 4px;
+    }
+
+    .demo-chat-typing span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #7b8794;
+      animation: demoChatTyping 1s infinite ease-in-out;
+    }
+
+    .demo-chat-typing span:nth-child(2) { animation-delay: .16s; }
+    .demo-chat-typing span:nth-child(3) { animation-delay: .32s; }
+
+    @keyframes demoChatTyping {
+      0%, 80%, 100% { opacity: 0.25; transform: translateY(0); }
+      40% { opacity: 1; transform: translateY(-2px); }
+    }
+
+    .demo-chat-input-wrap {
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+      padding: 12px;
+      display: flex;
+      gap: 8px;
+      background: #ffffff;
+    }
+
+    .demo-chat-input {
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: 10px;
+      padding: 10px 11px;
+      font: inherit;
+      font-size: 0.9rem;
+      color: var(--text);
+      min-width: 0;
+      flex: 1;
+    }
+
+    .demo-chat-send {
+      border: 0;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 0.84rem;
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 0 14px;
+      cursor: pointer;
+      transition: filter .18s ease;
+    }
+
+    .demo-chat-send:hover { filter: brightness(1.06); }
+
+    .demo-chat-cta {
+      background: var(--accent);
+      color: #ffffff;
+      border-radius: 14px;
+      border-bottom-left-radius: 6px;
+      padding: 12px;
+      display: grid;
+      gap: 9px;
+    }
+
+    .demo-chat-cta p {
+      margin: 0;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .demo-chat-cta a {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+    }
+
+    @media (max-width: 700px) {
+      .demo-chat-widget {
+        right: 12px;
+        left: 12px;
+        bottom: 12px;
+      }
+
+      .demo-chat-panel {
+        width: 100%;
+        height: min(82vh, 620px);
+        transform-origin: bottom center;
+      }
+
+      .demo-chat-toggle {
+        width: 56px;
+        height: 56px;
+      }
+    }
   </style>
   <script type="application/ld+json">
     {
@@ -1097,6 +1364,26 @@
     </section>
   </main>
 
+  <div class="demo-chat-widget" aria-live="polite">
+    <div class="demo-chat-panel" id="demo-chat-panel" aria-hidden="true">
+      <div class="demo-chat-header">
+        <h3 class="demo-chat-title">Demo: AI Dental Assistant</h3>
+        <button class="demo-chat-close" id="demo-chat-close" type="button" aria-label="Close chat">✕</button>
+      </div>
+      <div class="demo-chat-messages" id="demo-chat-messages"></div>
+      <form class="demo-chat-input-wrap" id="demo-chat-form">
+        <input class="demo-chat-input" id="demo-chat-input" type="text" autocomplete="off" placeholder="Type your message..." />
+        <button class="demo-chat-send" type="submit">Send</button>
+      </form>
+    </div>
+    <div class="demo-chat-badge">Try our AI demo</div>
+    <button class="demo-chat-toggle" id="demo-chat-toggle" type="button" aria-label="Open chat demo">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4.25 7.5A3.25 3.25 0 0 1 7.5 4.25h9A3.25 3.25 0 0 1 19.75 7.5v5A3.25 3.25 0 0 1 16.5 15.75h-4.77l-3.69 3.14c-.5.42-1.27.06-1.27-.59v-2.55H7.5a3.25 3.25 0 0 1-3.25-3.25v-5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+
   <footer class="site-footer">
     <div class="container footer-row">
       <span>© <span id="year"></span> FindPicked. All rights reserved.</span>
@@ -1118,6 +1405,261 @@
 
     const year = document.getElementById('year');
     if (year) year.textContent = new Date().getFullYear();
+
+    const chatPanel = document.getElementById('demo-chat-panel');
+    const chatToggle = document.getElementById('demo-chat-toggle');
+    const chatClose = document.getElementById('demo-chat-close');
+    const chatMessages = document.getElementById('demo-chat-messages');
+    const chatForm = document.getElementById('demo-chat-form');
+    const chatInput = document.getElementById('demo-chat-input');
+    const chatState = {
+      stage: 'root',
+      visitType: '',
+      visitDay: '',
+      ctaShown: false
+    };
+
+    const rootChoices = [
+      'I need to book an appointment',
+      'I have a toothache',
+      'What are your hours?'
+    ];
+
+    function scrollChatToBottom() {
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function addChoiceButtons(choices) {
+      if (!choices || !choices.length) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'demo-chat-choices';
+      choices.forEach((choice) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'demo-chat-choice';
+        btn.textContent = choice;
+        btn.addEventListener('click', () => {
+          addUserMessage(choice);
+          handleUserInput(choice, true);
+        });
+        wrap.appendChild(btn);
+      });
+      const row = document.createElement('div');
+      row.className = 'demo-chat-row bot';
+      row.appendChild(wrap);
+      chatMessages.appendChild(row);
+      scrollChatToBottom();
+    }
+
+    function addUserMessage(text) {
+      const row = document.createElement('div');
+      row.className = 'demo-chat-row user';
+      const bubble = document.createElement('div');
+      bubble.className = 'demo-chat-bubble';
+      bubble.textContent = text;
+      row.appendChild(bubble);
+      chatMessages.appendChild(row);
+      scrollChatToBottom();
+    }
+
+    function showTypingAndReply(text, choices) {
+      const typing = document.createElement('div');
+      typing.className = 'demo-chat-typing';
+      typing.innerHTML = '<span></span><span></span><span></span>';
+      chatMessages.appendChild(typing);
+      scrollChatToBottom();
+
+      window.setTimeout(() => {
+        typing.remove();
+        const row = document.createElement('div');
+        row.className = 'demo-chat-row bot';
+        const bubble = document.createElement('div');
+        bubble.className = 'demo-chat-bubble';
+        bubble.textContent = text;
+        row.appendChild(bubble);
+        chatMessages.appendChild(row);
+        if (choices && choices.length) addChoiceButtons(choices);
+        scrollChatToBottom();
+      }, 500);
+    }
+
+    function showCtaBanner() {
+      if (chatState.ctaShown) return;
+      chatState.ctaShown = true;
+      const row = document.createElement('div');
+      row.className = 'demo-chat-row bot';
+      const cta = document.createElement('div');
+      cta.className = 'demo-chat-cta';
+      cta.innerHTML = '<p>⚡ This is a demo. Imagine this running 24/7 for YOUR practice — booking appointments, answering questions, never missing a lead.</p><a href="https://calendly.com/ikow233/15min" target="_blank" rel="noopener">See how it works for your business →</a>';
+      row.appendChild(cta);
+      chatMessages.appendChild(row);
+      scrollChatToBottom();
+    }
+
+    function handleBookingTypeStep(choice) {
+      chatState.visitType = choice;
+      chatState.stage = 'booking_day';
+      showTypingAndReply('Great! What day works best for you?', ['Tomorrow', 'This week', 'Next week']);
+    }
+
+    function handleBookingDayStep(choice) {
+      chatState.visitDay = choice;
+      chatState.stage = 'booking_name';
+      showTypingAndReply('Perfect. I have a few openings. Can I get your name to hold the spot?');
+    }
+
+    function handleNameStep(name) {
+      chatState.name = name;
+      chatState.stage = 'booking_phone';
+      showTypingAndReply(`Thanks, ${name}! And what's the best phone number to reach you?`);
+    }
+
+    function finishBooking(phone) {
+      chatState.phone = phone;
+      chatState.stage = 'done';
+      showTypingAndReply(`All set! ✅ You're booked for a ${chatState.visitType || 'visit'} on ${chatState.visitDay || 'your selected day'}. We'll send a confirmation text shortly. Anything else I can help with?`);
+      window.setTimeout(showCtaBanner, 750);
+    }
+
+    function startBookingFlow() {
+      chatState.stage = 'booking_type';
+      showTypingAndReply("I'd be happy to help you book! What type of visit are you looking for?", ['Cleaning & checkup', 'Cosmetic consultation', 'Other']);
+    }
+
+    function startChat() {
+      chatMessages.innerHTML = '';
+      chatState.stage = 'root';
+      chatState.visitType = '';
+      chatState.visitDay = '';
+      chatState.ctaShown = false;
+      showTypingAndReply("Hi! 👋 I'm Ava, the AI assistant for Smile Dental. How can I help you today?", rootChoices);
+    }
+
+    function handleUserInput(rawInput, fromButton) {
+      const input = (rawInput || '').trim();
+      if (!input) return;
+
+      if (chatState.stage === 'root') {
+        if (input === 'I need to book an appointment') {
+          startBookingFlow();
+          return;
+        }
+        if (input === 'I have a toothache') {
+          chatState.stage = 'toothache_severity';
+          showTypingAndReply("I'm sorry to hear that! Let me help. How severe is the pain on a scale of 1-10?", ['Mild (1-3)', 'Moderate (4-6)', 'Severe (7-10)']);
+          return;
+        }
+        if (input === 'What are your hours?') {
+          chatState.stage = 'hours_followup';
+          showTypingAndReply("We're open Monday-Friday 8am-6pm, and Saturday 9am-2pm. We're closed on Sundays, but I'm here 24/7 to help you book! 😊 Would you like to schedule a visit?", ['Yes, book now', 'No thanks']);
+          return;
+        }
+        showTypingAndReply('I can help with appointments, urgent tooth pain, or office hours. What would you like to do?', rootChoices);
+        return;
+      }
+
+      if (chatState.stage === 'hours_followup') {
+        if (input === 'Yes, book now') {
+          startBookingFlow();
+        } else if (input === 'No thanks') {
+          chatState.stage = 'done';
+          showTypingAndReply("No problem! I'm here whenever you need me. Have a great day! 😊");
+          window.setTimeout(showCtaBanner, 750);
+        } else {
+          showTypingAndReply('Choose an option below so I can help quickly.', ['Yes, book now', 'No thanks']);
+        }
+        return;
+      }
+
+      if (chatState.stage === 'booking_type') {
+        handleBookingTypeStep(input);
+        return;
+      }
+
+      if (chatState.stage === 'booking_day') {
+        handleBookingDayStep(input);
+        return;
+      }
+
+      if (chatState.stage === 'booking_name') {
+        handleNameStep(input);
+        return;
+      }
+
+      if (chatState.stage === 'booking_phone') {
+        finishBooking(input);
+        return;
+      }
+
+      if (chatState.stage === 'toothache_severity') {
+        chatState.visitType = 'toothache visit';
+        if (input === 'Severe (7-10)') {
+          chatState.visitDay = 'today at 2:30 PM';
+          chatState.stage = 'toothache_reserve';
+          showTypingAndReply("That sounds urgent. I'd recommend coming in today if possible. We have an emergency slot at 2:30 PM. Want me to reserve it for you?", ['Yes, reserve it', 'I need another time']);
+          return;
+        }
+        if (input === 'Mild (1-3)' || input === 'Moderate (4-6)') {
+          chatState.visitDay = 'tomorrow';
+          chatState.stage = 'toothache_tomorrow';
+          showTypingAndReply('Got it. I can get you in within the next couple of days. Would tomorrow work?', ['Yes, tomorrow works', 'Need another day']);
+          return;
+        }
+        showTypingAndReply('Pick one of these so I can route this correctly.', ['Mild (1-3)', 'Moderate (4-6)', 'Severe (7-10)']);
+        return;
+      }
+
+      if (chatState.stage === 'toothache_reserve') {
+        if (input === 'I need another time') chatState.visitDay = 'the next available slot';
+        chatState.stage = 'booking_name';
+        showTypingAndReply("Let me grab your info to get you scheduled. What's your name?");
+        return;
+      }
+
+      if (chatState.stage === 'toothache_tomorrow') {
+        if (input === 'Need another day') chatState.visitDay = 'the next available day';
+        chatState.stage = 'booking_name';
+        showTypingAndReply("Let me grab your info to get you scheduled. What's your name?");
+        return;
+      }
+
+      if (chatState.stage === 'done') {
+        if (fromButton) return;
+        showTypingAndReply('I can start a new demo flow anytime. Tap one of these options to try again.', rootChoices);
+        chatState.stage = 'root';
+      }
+    }
+
+    function openChat() {
+      chatPanel.classList.add('open');
+      chatPanel.setAttribute('aria-hidden', 'false');
+      startChat();
+      window.setTimeout(() => chatInput.focus(), 120);
+    }
+
+    function closeChatPanel() {
+      chatPanel.classList.remove('open');
+      chatPanel.setAttribute('aria-hidden', 'true');
+    }
+
+    chatToggle.addEventListener('click', () => {
+      if (chatPanel.classList.contains('open')) {
+        closeChatPanel();
+      } else {
+        openChat();
+      }
+    });
+
+    chatClose.addEventListener('click', closeChatPanel);
+
+    chatForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const value = chatInput.value.trim();
+      if (!value) return;
+      addUserMessage(value);
+      chatInput.value = '';
+      handleUserInput(value, false);
+    });
   </script>
 </body>
 </html>
