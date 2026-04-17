@@ -1070,6 +1070,14 @@
       ]
     }
   </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
 </head>
 <body>
   <header>
@@ -1087,12 +1095,12 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <a class="btn btn-primary" href="https://calendly.com/ikow233/15min" target="_blank" rel="noopener">Book Consultation</a>
+      <a class="btn btn-primary" href="https://calendly.com/ikow233/15min" target="_blank" rel="noopener" data-track-section="hero">Book Consultation</a>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero" data-track-section="hero">
       <div class="container hero-grid">
         <div class="reveal in">
           <div class="eyebrow">AI Automation for US Small Businesses</div>
@@ -1102,8 +1110,8 @@
             so you stop losing customers to voicemail.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://calendly.com/ikow233/15min" target="_blank" rel="noopener">Book a Free 15-Min Call</a>
-            <a class="btn btn-secondary" href="#pricing">See Plans</a>
+            <a class="btn btn-primary" href="https://calendly.com/ikow233/15min" target="_blank" rel="noopener" data-track-section="hero">Book a Free 15-Min Call</a>
+            <a class="btn btn-secondary" href="#pricing" data-track-section="hero">See Plans</a>
           </div>
           <div class="metrics" aria-label="Agency performance metrics">
             <article class="metric">
@@ -1121,7 +1129,7 @@
           </div>
         </div>
 
-        <aside class="hero-panel reveal in" aria-label="Before and after comparison">
+        <aside class="hero-panel reveal in" aria-label="Before and after comparison" data-track-section="before-after">
           <div class="panel-head">
             <span>Before vs After FindPicked</span>
             <span class="chip">LIVE</span>
@@ -1155,7 +1163,7 @@
       </div>
     </section>
 
-    <section class="section" id="who">
+    <section class="section" id="who" data-track-section="is-this-for-you">
       <div class="container">
         <h2 class="section-title reveal">Is This For You?</h2>
         <p class="section-subtitle reveal">If these sound like your business, this is a strong fit.</p>
@@ -1168,7 +1176,7 @@
       </div>
     </section>
 
-    <section class="section" id="services">
+    <section class="section" id="services" data-track-section="services">
       <div class="container">
         <h2 class="section-title reveal">Services in Plain English</h2>
         <p class="section-subtitle reveal">We focus on fixing the exact places where time and revenue leak in your day-to-day operations.</p>
@@ -1229,7 +1237,7 @@
       </div>
     </section>
 
-    <section class="section" id="pricing">
+    <section class="section" id="pricing" data-track-section="pricing">
       <div class="container">
         <h2 class="section-title reveal">Straightforward Pricing</h2>
         <p class="section-subtitle reveal">Pick the level that matches your stage right now.</p>
@@ -1246,7 +1254,7 @@
               <li>Monthly performance report</li>
               <li>Email support</li>
             </ul>
-            <a class="btn btn-secondary" href="https://calendly.com/ikow233/15min" target="_blank" rel="noopener">Start with AI Front Desk</a>
+            <a class="btn btn-secondary" href="https://calendly.com/ikow233/15min" target="_blank" rel="noopener" data-track-section="pricing">Start with AI Front Desk</a>
             <p class="commitment">Minimum 3-month commitment</p>
           </article>
 
@@ -1263,7 +1271,7 @@
               <li>Quarterly strategy session</li>
               <li>Dedicated Slack channel</li>
             </ul>
-            <a class="btn btn-primary" href="https://calendly.com/ikow233/15min" target="_blank" rel="noopener">Scale with AI Operations</a>
+            <a class="btn btn-primary" href="https://calendly.com/ikow233/15min" target="_blank" rel="noopener" data-track-section="pricing">Scale with AI Operations</a>
             <p class="commitment">Minimum 6-month commitment</p>
           </article>
 
@@ -1279,14 +1287,14 @@
               <li>4-hour support response</li>
               <li>Weekly optimization reports</li>
             </ul>
-            <a class="btn btn-secondary" href="https://calendly.com/ikow233/15min" target="_blank" rel="noopener">Talk to Us</a>
+            <a class="btn btn-secondary" href="https://calendly.com/ikow233/15min" target="_blank" rel="noopener" data-track-section="pricing">Talk to Us</a>
             <p class="commitment">Minimum 12-month commitment</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="testimonials">
+    <section class="section" id="testimonials" data-track-section="testimonials">
       <div class="container">
         <h2 class="section-title reveal">Client Wins</h2>
         <p class="section-subtitle reveal">Real results from businesses like yours.</p>
@@ -1312,13 +1320,13 @@
             <div class="spots-badge">🟢 3 spots remaining this month</div>
           </div>
           <div>
-            <a class="btn btn-primary" href="https://calendly.com/ikow233/15min" target="_blank" rel="noopener">Book a Free Strategy Call</a>
+            <a class="btn btn-primary" href="https://calendly.com/ikow233/15min" target="_blank" rel="noopener" data-track-section="hero">Book a Free Strategy Call</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section" id="contact" data-track-section="contact">
       <div class="container contact-wrap">
         <article class="contact-card reveal">
           <h3>Get Your Free Automation Plan</h3>
@@ -1357,7 +1365,7 @@
               <label for="message">What is your biggest time-waster right now?</label>
               <textarea id="message" name="message" placeholder="What is your biggest time-waster right now?" required></textarea>
             </div>
-            <button class="btn btn-primary" type="submit">Get My Free Automation Plan</button>
+            <button class="btn btn-primary" type="submit" data-track-section="contact">Get My Free Automation Plan</button>
           </form>
         </article>
       </div>
@@ -1390,6 +1398,262 @@
       <span>AI automation that works while you sleep.</span>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const TRACKED_SECTIONS = new Set([
+        'hero',
+        'services',
+        'before-after',
+        'pricing',
+        'testimonials',
+        'contact',
+        'is-this-for-you'
+      ]);
+      const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      const UTM_STORAGE_KEY = 'fp_utm_params';
+      const DEV_MODE = window.location.protocol === 'file:' || /localhost|127\.0\.0\.1/.test(window.location.hostname);
+
+      function safeParseJSON(value) {
+        try {
+          return value ? JSON.parse(value) : {};
+        } catch (_err) {
+          return {};
+        }
+      }
+
+      function getCurrentUTMFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        const result = {};
+        UTM_KEYS.forEach((key) => {
+          const value = params.get(key);
+          if (value) result[key] = value;
+        });
+        return result;
+      }
+
+      function captureUTM() {
+        try {
+          const fromStorage = safeParseJSON(sessionStorage.getItem(UTM_STORAGE_KEY));
+          const fromURL = getCurrentUTMFromURL();
+          const merged = Object.assign({}, fromStorage, fromURL);
+          sessionStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(merged));
+          return merged;
+        } catch (_err) {
+          return {};
+        }
+      }
+
+      const utmContext = captureUTM();
+
+      function getTextFromElement(el) {
+        if (!el) return '';
+        const text = (el.innerText || el.textContent || el.value || '').trim();
+        return text.replace(/\s+/g, ' ');
+      }
+
+      function getSectionName(el) {
+        if (!el) return 'unknown';
+        const direct = el.getAttribute('data-track-section');
+        if (direct) return direct;
+        const parent = el.closest('[data-track-section]');
+        return parent ? parent.getAttribute('data-track-section') : 'unknown';
+      }
+
+      function getButtonLocation(sectionName, el) {
+        const explicit = el && el.getAttribute ? el.getAttribute('data-track-location') : '';
+        if (explicit) return explicit;
+        if (sectionName === 'pricing') return 'pricing';
+        if (sectionName === 'contact') return 'contact';
+        if (sectionName === 'chatbot') return 'chatbot';
+        return 'hero';
+      }
+
+      function track(eventName, properties) {
+        try {
+          const payload = Object.assign(
+            {
+              page_path: window.location.pathname,
+              page_title: document.title
+            },
+            utmContext,
+            properties || {}
+          );
+
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', eventName, payload);
+          }
+
+          if (DEV_MODE && window.console && typeof window.console.log === 'function') {
+            console.log('[tracking]', eventName, payload);
+          }
+        } catch (err) {
+          if (DEV_MODE && window.console && typeof window.console.warn === 'function') {
+            console.warn('[tracking] failed', err);
+          }
+        }
+      }
+
+      window.track = function (eventName, properties) {
+        track(eventName, properties);
+      };
+
+      let activeFlowType = 'booking';
+      let flowStarted = false;
+      let flowCompleted = false;
+
+      function flowTypeFromRootChoice(text) {
+        if (text === 'I need to book an appointment') return 'booking';
+        if (text === 'I have a toothache') return 'emergency';
+        if (text === 'What are your hours?') return 'hours';
+        return '';
+      }
+
+      const chatPanel = document.getElementById('demo-chat-panel');
+      const chatMessages = document.getElementById('demo-chat-messages');
+
+      if (chatPanel) {
+        let wasOpen = chatPanel.classList.contains('open');
+        const chatPanelObserver = new MutationObserver(() => {
+          const isOpen = chatPanel.classList.contains('open');
+          if (!wasOpen && isOpen) {
+            flowStarted = false;
+            flowCompleted = false;
+            activeFlowType = 'booking';
+            track('chatbot_opened', { flow_type: activeFlowType });
+          }
+          wasOpen = isOpen;
+        });
+        chatPanelObserver.observe(chatPanel, { attributes: true, attributeFilter: ['class'] });
+      }
+
+      if (chatMessages) {
+        const chatMessagesObserver = new MutationObserver(() => {
+          const ctaLink = chatMessages.querySelector('.demo-chat-cta a[href*="calendly.com"]');
+          if (ctaLink) {
+            ctaLink.setAttribute('data-track-section', 'chatbot');
+          }
+          if (ctaLink && !flowCompleted) {
+            flowCompleted = true;
+            track('chatbot_flow_completed', { flow_type: activeFlowType });
+          }
+        });
+        chatMessagesObserver.observe(chatMessages, { childList: true, subtree: true });
+      }
+
+      document.addEventListener(
+        'click',
+        (event) => {
+          const choiceButton = event.target.closest('.demo-chat-choice');
+          if (choiceButton && !flowStarted) {
+            const flowType = flowTypeFromRootChoice(getTextFromElement(choiceButton));
+            if (flowType) {
+              activeFlowType = flowType;
+              flowStarted = true;
+              track('chatbot_flow_started', { flow_type: activeFlowType });
+            }
+          }
+
+          const ctaEl = event.target.closest('a, button, input[type="submit"], input[type="button"]');
+          if (!ctaEl) return;
+
+          const isCalendlyLink = ctaEl.matches('a[href*="calendly.com"]');
+          const isCtaButton =
+            ctaEl.classList.contains('btn') ||
+            (ctaEl.tagName === 'BUTTON' && ctaEl.type === 'submit');
+
+          if (isCalendlyLink || isCtaButton) {
+            const sectionName = getSectionName(ctaEl);
+            track('cta_click', {
+              button_text: getTextFromElement(ctaEl),
+              button_location: getButtonLocation(sectionName, ctaEl),
+              page_section: sectionName
+            });
+          }
+
+          if (ctaEl.matches('.demo-chat-cta a[href*="calendly.com"]')) {
+            track('chatbot_cta_clicked', { flow_type: activeFlowType });
+          }
+        },
+        { passive: true }
+      );
+
+      const contactForm = document.querySelector('form[aria-label="Contact form"]');
+      if (contactForm) {
+        contactForm.addEventListener(
+          'submit',
+          () => {
+            const serviceField = contactForm.querySelector('select[name="business"]');
+            track('form_submitted', {
+              service_type: serviceField ? (serviceField.value || 'unspecified') : 'unspecified',
+              page_section: 'contact'
+            });
+          },
+          true
+        );
+      }
+
+      const scrollMilestones = [25, 50, 75, 100];
+      const firedScrollMilestones = new Set();
+      let scrollTicking = false;
+
+      function runScrollDepthTracking() {
+        scrollTicking = false;
+        const doc = document.documentElement;
+        const scrollTop = window.pageYOffset || doc.scrollTop || 0;
+        const maxScrollable = Math.max((doc.scrollHeight || 0) - window.innerHeight, 1);
+        const percent = Math.min(100, Math.round((scrollTop / maxScrollable) * 100));
+
+        scrollMilestones.forEach((depth) => {
+          if (percent >= depth && !firedScrollMilestones.has(depth)) {
+            firedScrollMilestones.add(depth);
+            track('scroll_depth', { depth: depth });
+          }
+        });
+      }
+
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (scrollTicking) return;
+          scrollTicking = true;
+          window.requestAnimationFrame(runScrollDepthTracking);
+        },
+        { passive: true }
+      );
+      runScrollDepthTracking();
+
+      const viewedSections = new Set();
+      const sectionObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const sectionName = getSectionName(entry.target);
+            if (!TRACKED_SECTIONS.has(sectionName) || viewedSections.has(sectionName)) return;
+            viewedSections.add(sectionName);
+            track('section_viewed', { page_section: sectionName });
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.35 }
+      );
+
+      document
+        .querySelectorAll('section[data-track-section], aside[data-track-section]')
+        .forEach((el) => {
+          const sectionName = getSectionName(el);
+          if (TRACKED_SECTIONS.has(sectionName)) sectionObserver.observe(el);
+        });
+
+      [30, 60, 120, 300].forEach((seconds) => {
+        window.setTimeout(() => {
+          track('time_on_page', { seconds: seconds });
+        }, seconds * 1000);
+      });
+    })();
+  </script>
 
   <script>
     const observer = new IntersectionObserver((entries) => {
